@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Checkout File') {
       steps {
-        sh '''mkdir -p test-checkout
+        sh '''rm -rf test-checkout
+mkdir -p test-checkout
 cd test-checkout
 touch test.txt
 git clone git@github.com:rudyk88/jenkins.git'''
