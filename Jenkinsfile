@@ -37,13 +37,9 @@ git clone git@github.com:rudyk88/jenkins.git'''
       }
     }
     stage('Next Stage 2') {
-        try {
-            sh 'exit 1'
-        }
-        catch (exc) {
-            echo 'Something failed, I should sound the klaxons!'
-            exit 0
-        }  
+      steps {
+        sh 'echo "XYZ"'
+      }
     }
   }
   post { 
