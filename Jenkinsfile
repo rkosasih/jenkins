@@ -23,7 +23,6 @@ git clone git@github.com:rudyk88/jenkins.git'''
             catchError() {
               sh 'echo "123"'
             }
-            
             input(message: 'Please click proceed for approval', id: 'approval_flag')
             
           }
@@ -35,25 +34,21 @@ git clone git@github.com:rudyk88/jenkins.git'''
         waitUntil() {
           fileExists 'test-checkout/test.txt'
         }
-        
       }
     }
     stage('Next Stage 2') {
-      steps {
         try {
             sh 'exit 1'
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
             exit 0
-        }
-        
-      }
+        }  
     }
   }
-      post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
+  post { 
+    always { 
+        echo 'I will always say Hello again!'
     }
+  }
 }
