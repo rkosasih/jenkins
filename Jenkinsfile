@@ -20,6 +20,10 @@ git clone git@github.com:rudyk88/jenkins.git'''
           },
           "Read Readme": {
             sh 'cat test-checkout/jenkins/README.md'
+            catchError() {
+              sh 'echo "123"'
+            }
+            
             
           }
         )
