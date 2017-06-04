@@ -36,8 +36,8 @@ pipeline {
     }
   }
   environment {
-    Server = 'Centos'
-    Environment = 'DEV'
+    server = 'Centos'
+    environ = 'DEV'
   }
   post {
     always {
