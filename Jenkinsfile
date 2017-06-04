@@ -17,7 +17,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
             
           },
           "Read Readme": {
-            sh 'cat readme.md'
+            sh 'cat jenkins/readme.md'
             
           }
         )
