@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout File') {
       steps {
-        sh '''rm -rf test-checkout
+        sh '''rm -rf *
 mkdir -p test-checkout
 cd test-checkout
 touch test.txt
@@ -14,7 +14,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
       steps {
         parallel(
           "Read File": {
-            sh 'cat sources'
+            sh 'cat test-checkout/jenkins/sources'
             
           },
           "Read Readme": {
