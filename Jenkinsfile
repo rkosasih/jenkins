@@ -50,7 +50,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
         
       }
     }
-  }
+  },
       post { 
         always { 
             echo 'I will always say Hello again!'
