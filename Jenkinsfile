@@ -24,7 +24,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
               sh 'echo "123"'
             }
             
-            input(message: 'Input Yes', id: 'approval_flag')
+            input(message: 'Please click proceed for approval', id: 'approval_flag')
             
           }
         )
