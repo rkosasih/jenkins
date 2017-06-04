@@ -37,7 +37,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
         }
         
       }
-    },
+    }
     stage('Next Stage 2') {
       steps {
         try {
@@ -50,7 +50,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
         
       }
     }
-  },
+  }
       post { 
         always { 
             echo 'I will always say Hello again!'
