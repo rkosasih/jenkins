@@ -45,7 +45,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
-            throw
+            exit 0
         }
         
       }
