@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''mkdir -p test-checkout
 cd test-checkout
+touch test.txt
 git clone git@github.com:rudyk88/jenkins.git'''
       }
     }
