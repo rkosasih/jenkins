@@ -1,15 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout File') {
-      steps {
-        sh '''rm -rf *
-mkdir -p test-checkout
-cd test-checkout
-touch test.txt
-git clone git@github.com:rudyk88/jenkins.git'''
-      }
-    }
     stage('Read File') {
       steps {
         parallel(
@@ -23,6 +14,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
             catchError() {
               sh 'echo "123"'
             }
+            
             input(message: 'Please click proceed for approval', id: 'approval_flag')
             
           }
@@ -34,6 +26,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
         waitUntil() {
           fileExists 'test-checkout/test.txt'
         }
+        
       }
     }
     stage('Next Stage 2') {
@@ -42,9 +35,15 @@ git clone git@github.com:rudyk88/jenkins.git'''
       }
     }
   }
-  post { 
-    always { 
-        echo 'I will always say Hello again!'
+  environment {
+    Server = 'Centos'
+    Environment = 'DEV'
+  }
+  post {
+    always {
+      echo 'I will always say Hello again!'
+      
     }
+    
   }
 }
