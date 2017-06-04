@@ -33,7 +33,7 @@ git clone git@github.com:rudyk88/jenkins.git'''
     stage('Next Stage') {
       steps {
         waitUntil() {
-          fileExists 'test.txt'
+          fileExists 'test-checkout/test.txt'
         }
         
       }
