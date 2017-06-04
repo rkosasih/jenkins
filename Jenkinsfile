@@ -30,10 +30,22 @@ git clone git@github.com:rudyk88/jenkins.git'''
         )
       }
     }
-    stage('Next Stage') {
+    stage('Next Stage 1') {
       steps {
         waitUntil() {
           fileExists 'test-checkout/test.txt'
+        }
+        
+      }
+    },
+    stage('Next Stage 2') {
+      steps {
+        try {
+            sh 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
         }
         
       }
