@@ -26,7 +26,7 @@ fi'''
         )
       }
     }
-    stage('Next Stage 1') {
+    stage('Next Stage') {
       steps {
         waitUntil() {
           fileExists 'test-checkout/test.txt'
@@ -34,9 +34,12 @@ fi'''
         
       }
     }
-    stage('Next Stage 2') {
+    stage('Final Stage') {
       steps {
-        sh 'echo "XYZ"'
+        sh '''echo "XYZ"
+
+echo "{\"mykey\":\"myvalue\"} > test.json'''
+        archiveArtifacts '*.json'
       }
     }
   }
