@@ -32,6 +32,7 @@ fi'''
 echo ${server} > test.json
 echo ${environ} >> test.json
 echo "---" >> test.json
+echo ${DEV_ACCESS} >> test.json
 '''
         waitUntil() {
           fileExists 'test.txt'
