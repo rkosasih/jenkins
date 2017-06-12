@@ -33,6 +33,9 @@ echo ${server} > test.json
 echo ${environ} >> test.json
 echo "---" >> test.json
 echo ${DEV_ACCESS} >> test.json
+echo ${dev_user} >> test.json
+echo ${DEV_ACCESS_USR} >> test.json
+echo ${DEV_ACCESS_PSW} >> test.json
 '''
         waitUntil() {
           fileExists 'test.txt'
