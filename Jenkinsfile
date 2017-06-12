@@ -4,7 +4,7 @@ pipeline {
     stage('Read File') {
       steps {
         parallel(
-          "Read File": {
+          "Stage 1": {
             sh 'echo "Hello World ..."'
             sleep 3
             sh '''if [ -f jenkins/sources ]; then
@@ -28,7 +28,9 @@ fi'''
     }
     stage('Next Stage') {
       steps {
-        sh 'touch test.txt'
+        sh '''touch test.txt
+echo ${server} > test.txt
+echo ${environ} >> test.txt'''
         waitUntil() {
           fileExists 'test.txt'
         }
