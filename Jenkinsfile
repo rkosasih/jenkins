@@ -55,7 +55,7 @@ EOF'''
   environment {
     server = 'Centos'
     environ = 'DEV'
-    DEV_ACCESS = 'credentials(\'test_user\')'
+    DEV_ACCESS = 'credentials(\'dev_user\')'
   }
   post {
     always {
