@@ -15,7 +15,7 @@ fi'''
             
           },
           "Read Readme": {
-            sh 'cat jenkins/README.md'
+            sh 'cat README.md'
             catchError() {
               sh 'echo "123"'
             }
@@ -38,7 +38,7 @@ fi'''
       steps {
         sh '''echo "XYZ"
 
-echo "{\"mykey\":\"myvalue\"} > test.json'''
+echo "{"mykey":"myvalue"} > test.json'''
         archiveArtifacts '*.json'
       }
     }
