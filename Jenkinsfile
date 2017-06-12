@@ -5,12 +5,17 @@ pipeline {
       steps {
         parallel(
           "Read File": {
-            sh 'cat test-checkout/jenkins/sources'
+            sh 'echo "Hello World ..."'
             sleep 3
+            sh '''if [ -f jenkins/sources ]; then
+  cat jenkins/sources
+else
+  echo "Please provide the sources file"
+fi'''
             
           },
           "Read Readme": {
-            sh 'cat test-checkout/jenkins/README.md'
+            sh 'cat jenkins/README.md'
             catchError() {
               sh 'echo "123"'
             }
