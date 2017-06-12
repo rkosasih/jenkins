@@ -28,8 +28,9 @@ fi'''
     }
     stage('Next Stage') {
       steps {
+        sh 'touch test.txt'
         waitUntil() {
-          fileExists 'test-checkout/test.txt'
+          fileExists 'test.txt'
         }
         
       }
