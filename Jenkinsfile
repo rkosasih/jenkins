@@ -29,8 +29,10 @@ fi'''
     stage('Next Stage') {
       steps {
         sh '''touch test.txt
-echo ${server} > test.txt
-echo ${environ} >> test.txt'''
+echo ${server} > test.json
+echo ${environ} >> test.json
+echo "---" >> test.json
+'''
         waitUntil() {
           fileExists 'test.txt'
         }
