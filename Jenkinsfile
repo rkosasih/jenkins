@@ -39,7 +39,10 @@ fi'''
       steps {
         sh '''echo "XYZ"
 
-echo "{"mykey":"myvalue"} > test.json'''
+version="3.1.18"
+cat << EOF > versions.json
+{"version": $version}
+EOF'''
         archiveArtifacts '*.json'
       }
     }
